@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Model } from "./model";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todo';
+  private readonly _model = new Model();
+
+  getName(): string {
+    return this._model.user;
+  }
 }
